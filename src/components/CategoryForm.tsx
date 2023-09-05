@@ -60,7 +60,7 @@ const CategoryForm = () => {
         if (selectedMainCategoryId !== null) {
             api
                 .get<{ data: { subcategories: SubCategory[] } }>(
-                    `properties?cat=100`
+                    `properties?cat==${selectedMainCategoryId}`
                 )
                 .then((response: AxiosResponse) => {
                     setSubCategories(response.data.data);
